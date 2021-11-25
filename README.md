@@ -1,2 +1,1 @@
-# tpl-umi-j
-umi，antd，tpl
+# readme

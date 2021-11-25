@@ -1,0 +1,87 @@
+@import '~antd/es/style/themes/default.less';
+@import './assets/resetCss/antd_cover.less';
+html,
+body,
+#root {
+  height: 100%;
+}
+.colorWeak {
+  filter: invert(80%);
+}
+.ant-layout {
+  min-height: 100vh;
+}
+canvas {
+  display: block;
+}
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul,
+ol {
+  list-style: none;
+}
+:global {
+  .ant-menu-item-selected::before {
+    transform: scaleY(1);
+    opacity: 1;
+    border-left: 3px solid #00bc70;
+    position: absolute;
+    transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    content: ' ';
+  }
+  .ant-btn-primary {
+    box-shadow: none;
+  }
+  .ant-menu-item-selected::after {
+    opacity: 0 !important;
+    content: '' !important;
+  }
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// 兼容IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
+.ant-btn,
+.ant-btn-primary {
+  text-shadow: none;
+  box-shadow: none;
+}
+
+// 去除antd PopConfirm无图标时的padding-left
+.no-icon-popconfirm {
+  .ant-popover-message-title {
+    padding-left: 0;
+  }
+}
+
+:global(.baseline-advser-select-acct-modal) {
+  .ant-modal-confirm-btns {
+    display: none;
+  }
+}

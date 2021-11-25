@@ -1,0 +1,88 @@
+{
+  "name": "umi_react_cli",
+  "version": "0.0.1",
+  "private": true,
+  "description": "umi_react_cli",
+  "scripts": {
+    "build": "umi build",
+    "dev": "cross-env DEPLOY_ENV=test umi dev",
+    "start": "node server",
+    "analyze": "cross-env ANALYZE=1 umi build",
+    "ui": "umi ui",
+    "lint": "eslint --quiet --ext .jsx,.js,.tsx src",
+    "fixlint": "eslint --fix --ext .jsx,.js,.tsx src",
+    "lintcss": "stylelint 'src/**/*.less' --fix",
+    "fixall": "eslint --fix --ext .jsx,.js,.tsx src && stylelint 'src/**/*.less' --fix",
+    "lint:report": "eslint --ext .jsx,.js src -f checkstyle -o report_zacc_eslint_js.xml; stylelint --custom-formatter node_modules/stylelint-checkstyle-formatter 'src/**/*.{css,less}' > report_zacc_stylelint_css.xml; exit 0"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.6.4",
+    "@ant-design/pro-layout": "^4.10.7",
+    "@antv/data-set": "^0.10.2",
+    "@umijs/plugin-blocks": "^2.0.5",
+    "@umijs/preset-ant-design-pro": "^1.0.1",
+    "@umijs/preset-react": "^1",
+    "@umijs/preset-ui": "^2.0.9",
+    "antd": "^4.16.13",
+    "classnames": "^2.2.6",
+    "dva": "^2.6.0-beta.16",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "redux": "^4.0.1",
+    "umi": "^3.5.20",
+    "umi-request": "^1.4.0"
+  },
+  "devDependencies": {
+    "@ant-design/pro-cli": "^1.0.14",
+    "@types/history": "^4.7.2",
+    "@types/jest": "^24.0.23",
+    "@types/lodash": "^4.14.144",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "@umijs/fabric": "2.0.0",
+    "babel-eslint": "^10.1.0",
+    "chalk": "^3.0.0",
+    "check-prettier": "^1.0.3",
+    "cross-env": "^6.0.3",
+    "cross-port-killer": "^1.1.1",
+    "enzyme": "^3.9.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-za": "^2.2.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "lint-staged": "^9.0.0",
+    "mockjs": "^1.0.1-beta3",
+    "node-fetch": "^2.6.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^13.6.1",
+    "stylelint-checkstyle-formatter": "^0.1.2",
+    "stylelint-config-za": "^0.1.0",
+    "typescript": "^3"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "checkFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.less",
+    "config/**/*.js*",
+    "scripts/**/*.js"
+  ]
+}
