@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "{{description}}",
+  "author": "{{author}}",
   "scripts": {
     "build": "umi build",
     "dev": "cross-env DEPLOY_ENV=test umi dev",
