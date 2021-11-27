@@ -1,8 +1,8 @@
 {
-  "name": "umi_react_cli",
+  "name": "{{templateName}}",
   "version": "0.0.1",
   "private": true,
-  "description": "umi_react_cli",
+  "description": "{{description}}",
   "scripts": {
     "build": "umi build",
     "dev": "cross-env DEPLOY_ENV=test umi dev",
